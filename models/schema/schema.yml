@@ -1,0 +1,26 @@
+
+models:
+  - name: stg_orders
+    columns:
+      - name: o_orderkey
+        tests:
+          - not_null
+          - unique
+      - name: o_custkey
+      - name: o_orderdate
+      - name: order_year
+
+  - name: customer_revenue
+    columns:
+      - name: o_custkey
+        tests:
+          - not_null
+      - name: customer_name
+      - name: total_revenue
+
+  - name: yearly_revenue
+    columns:
+      - name: order_year
+        tests:
+          - not_null
+      - name: total_revenue
